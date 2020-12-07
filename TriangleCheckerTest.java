@@ -34,7 +34,7 @@ public class TriangleCheckerTest {
         assertEquals("!!!Type is wrong!!!",TriangleChecker.TriangleType.ISOSCELES, type);
 
     }
-public void testIsoscelesTriangle2version() {
+public void testIsoscelesTriangle_version2() {
 
         // Arrange
         float a = 3;
@@ -48,7 +48,7 @@ public void testIsoscelesTriangle2version() {
         assertEquals("!!!Type is wrong!!!",TriangleChecker.TriangleType.ISOSCELES, type);
 
     }
-    public void testIsoscelesTriangle3version() {
+    public void testIsoscelesTriangle_version3() {
 
         // Arrange
         float a = 5;
@@ -63,7 +63,23 @@ public void testIsoscelesTriangle2version() {
 
     }
     @Test //EQUILATERAL
-    public void testEquilateralTriangle() {
+    public void testEquilateralTriangle_1() {
+
+        // Arrange
+        float a = 3;
+        float b = 4;
+        float c = 5;
+
+        // Act
+        TriangleChecker.TriangleType type = TriangleChecker.checkTriangle(a, b, c);
+
+        // Assert
+        assertEquals("!!!Type is wrong!!!",TriangleChecker.TriangleType.NORMAL, type);
+
+    }
+
+    @Test //EQUILATERAL
+    public void testEquilateralTriangle_2() {
 
         // Arrange
         float a = 3;
@@ -77,6 +93,7 @@ public void testIsoscelesTriangle2version() {
         assertEquals("!!!Type is wrong!!!",TriangleChecker.TriangleType.EQUILATERAL, type);
 
     }
+
 
     @Test //NONE
     public void testValidTriangle_negativeNumbers() {
@@ -94,8 +111,10 @@ public void testIsoscelesTriangle2version() {
 
     }
 
+
     @Test //NONE a+b < c
     public void testValidTriangle_sideTooLong_version1() {
+
 
         // Arrange
         float a = 2;
@@ -109,6 +128,7 @@ public void testIsoscelesTriangle2version() {
         assertEquals("!!!Type is wrong!!!",TriangleChecker.TriangleType.NONE, type);
 
     }
+
     @Test //NONE a+b < c
     public void testValidTriangle_sideTooLong_version2() {
 
